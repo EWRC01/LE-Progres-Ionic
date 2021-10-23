@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"></script>
+<script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css"/>
+    <title>Home</title>
+</head>
+<style>
+    ion-content.background1{
+        --background:url(assets/img/test3.jpg) no-repeat 0 0/100% 100% ;
+    }
+    
+    .ion-centerList{
+        display: flex!important;
+        justify-content: center;
+        align-items: center!important;
+        background-color: transparent;
+        
+    }
+    :root{
+        --ion-item-background:transparent;
+        
+    }
+   
+
+</style>
+<body>
+    
+<!--Inicio de codigo-->
+<ion-content padding class="background1">
+        <center>
+        <ion-text color="black" text-center></ion-text>
+            <h1>Le progres</h1>
+        </ion-text>
+    </center>
+   
+    <ion-list class="ion-centerList">
+        <ion-item>
+            <ion-button color="warning" size="medium">
+                Tutor
+            </ion-button>
+            <ion-button color="warning" size="medium">
+                Admin
+            </ion-button>
+        </ion-item>
+    </ion-list>
+    <form>
+        <ion-row style="margin-top: 1cm;">
+            <ion-col>
+                <ion-item>
+                    <h4>Nombre del tutor:</h4>
+                </ion-item>
+                <ion-item>
+                    <ion-input type="text" id="nameTutor" placeholder="Escriba su nombre"></ion-input>
+                </ion-item>
+                
+                
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col>
+                <ion-item>
+                    <h4 color="dark">Correo Electronico:</h4>
+                
+                </ion-item>
+                <ion-item>
+                    <ion-input type="email" id="emailTutor" placeholder="Escriba su correo" ></ion-input>
+                </ion-item>
+        </ion-row>
+        <ion-row>
+            <ion-col>
+                <ion-item>
+                    <h4 color="dark">Contraseña del tutor:</h4>   
+               
+                </ion-item>
+                <ion-item>
+                    <ion-input type="password" id="passTutor" placeholder="Escriba su contraseña"></ion-input>
+                </ion-item>
+        </ion-row>
+        <ion-row style="    margin-left: 2cm; margin-top: 1.5cm;">
+            <ion-col>
+                <ion-item>
+                    <ion-button color="success" size="medium">Enviar</ion-button>
+                    <ion-button color="warning" size="medium">Jugemos</ion-button>
+                </ion-item>
+        </ion-row>
+    </form>
+    <ion-row style="margin-left: 2.4cm;">
+        <ion-col>
+            <ion-item>
+                <ion-button color="danger" size="medium" >Subir Contenido</ion-button>
+            </ion-item>
+            
+    </ion-row>
+
+    <ion-row>
+        <ion-col>
+            <ion-item>
+                <ion-button color="dark" size="medium" >Olvido la contraseña?</ion-button>
+                <ion-button color="dark" size="medium" >Ya esta registrado?</ion-button>
+            </ion-item>
+            
+    </ion-row>
+    
+  
+    
+</ion-content>
+
+<!--Fin de codigo-->
+</body>
+</html>
