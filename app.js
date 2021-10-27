@@ -1,28 +1,41 @@
 console.log('Works!')
-const description =  document.getElementById("txtDescription");
+const img = document.getElementById("inputUpload");
 const titulo = document.getElementById("txtTitulo");
+const descripcion =  document.getElementById("txtDescription");
 const btnUpload = document.getElementById("btnUpload");
 const btnCancel = document.getElementById("btnCancel");
+const uploadList = document.getElementById("uploadsList");
 
 
 
-btnUpload.addEventListener('click', () => {
-    const descriptionA = description.value;
-    const tituloA = titulo.value;
-    console.log(tituloA,  descriptionA);
-})
 
 
-const $seleccionArchivos = document.querySelector('#inputUpload')
-  const $prevImagen = document.querySelector("#prevImg");
-  $seleccionArchivos.addEventListener("change", ()=>{
-    const archivos = $seleccionArchivos.files;
-    if(!archivos || !archivos.length) {
-        $prevImagen.src="";
-        return;
+function addNew(){
+    const newUploadList = {
+        title: titulo.value,
+        description: descripcion.value,
+        src: img.value
     }
+    const newUploadsTemplate = `
+                    <ion-card>
+                    <ion-card-header>
+                    <ion-card-title>
+                    
+                    ${newUploadList.title}
+                    
+                    </ion-card-title>
+                    </ion-card-header>
+                    <ion-card-content>
+                    ${newUploadList.description}
+                    <ion-thumbnail>
+                    <img src="${newUploadList.src}">
+                    </ion-thumbnail>
+                    </ion-card-content>
+                    </ion-card>
 
-    const primerArchivo = archivos[0];
-    const objectURL = URL.createObjectURL(primerArchivo);
-    $prevImagen.src = objectURL;
-});
+                    
+`;
+    uploadList.innerHTML += newUploadsTemplate;
+    console.log(img.value)
+
+}
