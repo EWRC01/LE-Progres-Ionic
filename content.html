@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"></script>
+<script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css"/>
+    <title>Document</title>
+</head>
+<body>
+    <ion-app>
+    <ion-content>
+        <ion-card>
+            <ion-card-header color="primary">
+            <ion-card-title>Agrega nuevo contenido</ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+                <ion-item>
+                    <ion-label position="floating">Subida de archivos</ion-label>
+                    <ion-input type="file" accept=".jpg, .png, .jpeg" id="inputUpload"></ion-input>
+                </ion-item>
+                <ion-item>
+                    <ion-label position="floating">Titulo del archivo<ion-label>
+                    <ion-textarea type="text" id="txtTitulo"></ion-textarea>
+                </ion-item>
+                <ion-item>
+                    <ion-label position="floating">Descripcion del archivo<ion-label>
+                    <ion-textarea type="text" id="txtDescription"></ion-textarea>
+                </ion-item>
+                <ion-item>
+                    <ion-button color="tertiary" size="medium" expand="block" id="btnUpload"><ion-icon name="arrow-up-outline" ></ion-icon> Subir</ion-button>
+                    <ion-button color="danger" size="medium" expand="block" id=""><ion-icon name="close-circle"></ion-icon> Cancelar</ion-button>
+                </ion-item>
+                
+            </ion-card-content>
+        </ion-card>
+        <ion-list>
+            <ion-img id="prevImg"></ion-img>
+        </ion-list>
+    </ion-content>
+    </ion-app>
+    <script src="./app.js"></script>
+</body>
+</html>
