@@ -8,7 +8,6 @@
        </ion-header>
        <ion-content>
          <ion-list>
-
              <ion-item href="/home">
                <ion-icon name="mail-outline" slot="start"></ion-icon>
                <ion-label>Inicio</ion-label>
@@ -35,7 +34,7 @@
 <script>
 import { IonApp, IonRouterOutlet, IonMenu, IonHeader,
 IonToolbar, IonList, IonItem,IonContent, 
-IonTitle, IonLabel, IonIcon} from '@ionic/vue';
+IonTitle, IonLabel, IonIcon, menuController} from '@ionic/vue';
 import { defineComponent } from 'vue';
 
 export default defineComponent({
@@ -57,16 +56,17 @@ export default defineComponent({
      console.log("App has been created. Checking database...")
      //await this.$storage.create()
   },
-methods: {
-   async cerrarSesion(){
-        await this.$storage.create()
-        await this.$storage.remove('usuarioSesion')
-        console.log("Sesion de usuario Eliminadao")
-        this.$router.push('/login')
-        console.log("redireccionando a Login")
+   methods: {
+      async cerrarSesion(){
+           await this.$storage.create()
+           await this.$storage.remove('usuarioSesion')
+           console.log("Sesion de usuario Eliminadao")
+           menuController.close("first")
+           this.$router.push('/login')
+           console.log("redireccionando a Login")
 
+      }
    }
-}
 
 });
 </script>

@@ -19,7 +19,8 @@
          </ion-toolbar>
        </ion-header>
       <div id="container">
-        <strong>Bienvenido a Le Progres!</strong>
+        <strong>Bienvenido a Le Progres!</strong><br>
+        <h2>{{usuario.toUpperCase()}}</h2>
         <p>Utiliza el menu del lado para <br>poder ver las diferentes opciones</p>
       </div>
     </ion-content>
@@ -50,6 +51,13 @@ export default defineComponent({
          console.log("Usuario no encontrado")
          this.$router.push('/login')
          console.log("redireccionando a Login")
+     }else{
+         this.usuario = usuarioLogeado.nombre
+     }
+  },
+  data(){
+     return {
+        usuario: ''
      }
   },
    methods: {

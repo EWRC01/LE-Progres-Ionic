@@ -88,6 +88,15 @@ export default defineComponent({
          password: ''
      }
   },
+  async ionViewWillEnter(){
+     await this.$storage.create()
+     const usuarioLogeado = await this.$storage.get('usuarioSesion')
+     if(usuarioLogeado){
+         console.log("Ya hay un usuario registrado")
+         this.$router.push('/home')
+         console.log("redireccionando a Home")
+     }
+  },
   methods: {
     async verificar(){
        /*const datos = [
