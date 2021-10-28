@@ -29,10 +29,20 @@
          </ion-row>
          <ion-row>
             <ion-col>
-               <ion-button color="danger" size="large" expand="block">
+               <ion-button color="secondary" size="large" expand="block">
                <ion-icon slot="start" name="star"></ion-icon>
-               Página en progreso :O
+               Algunas rutinas que se pueden hacer
                </ion-button>
+            </ion-col>
+         </ion-row>
+         <ion-row>
+            <ion-col>
+              <img src="assets/images/rutina_temporal.png"> 
+            </ion-col>
+         </ion-row>
+         <ion-row>
+            <ion-col>
+              <img src="assets/images/Emociones_temporal.png"> 
             </ion-col>
          </ion-row>
        </ion-grid>
