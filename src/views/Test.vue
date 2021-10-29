@@ -69,7 +69,8 @@ export default defineComponent({
    methods: {
       async test(){
          await this.$storage.create()
-         await this.$storage.remove('usuarioSesion')
+         //await this.$storage.remove('usuarioSesion')
+         await this.$storage.clear()
       },
 
        /*const datos = [
