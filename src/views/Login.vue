@@ -61,7 +61,7 @@
 <script>
 import { IonCol, IonGrid, IonRow, IonPage, IonContent,
 IonToolbar, IonTitle, IonHeader, IonText, IonItem,
-IonInput, IonButton, IonLabel} from '@ionic/vue';
+IonInput, IonButton, IonLabel, alertController} from '@ionic/vue';
 import { defineComponent } from 'vue';
 
 export default defineComponent({
@@ -99,6 +99,21 @@ export default defineComponent({
   },
   methods: {
     async verificar(){
+
+      const alertaVacio = await alertController
+        .create({
+          header: 'Alerta',
+          subHeader: 'Ingreso de datos',
+          message: 'Debe ingresar datos en el correo o en la contraseña',
+          buttons: ['OK'],
+        });
+      const alertaUsuarioIncorrecto = await alertController
+        .create({
+          header: 'Alerta',
+          subHeader: 'Usuario no valido',
+          message: 'El correo o la contraseña especificados son invalidos',
+          buttons: ['OK'],
+        });
        /*const datos = [
         {correo:'abc@gmail.com', nombre:'maria', password:'1235'},
         {correo:'jose@gmail.com', nombre:'nose', password:'jose123'},
@@ -107,8 +122,16 @@ export default defineComponent({
         {correo:'jessy@gmail.com', nombre:'jessy', password:'jessy123'},
         {correo:'nestor@gmail.com', nombre:'nestor', password:'nestor123'}
        ]*/
+       if(!this.correo.trim() || !this.password.trim()){
+          console.log("No puede dejar datos en blanco")
+          await alertaVacio.present()
+          return
+       }
+
       await this.$storage.create()
-      const listaTutores = await this.$storage.get('tutores')
+      let listaTutores = await this.$storage.get('tutores')
+      if(!listaTutores)
+         listaTutores = []
       for(const tutor of listaTutores){
          if(this.correo == tutor.correo && this.password == tutor.password){
            this.$storage.set('usuarioSesion', {...tutor, loginFecha: new Date().toString()})
@@ -118,10 +141,14 @@ export default defineComponent({
       }
       
       //No se verifica si no existe el usuario
-      if(this.$storage.get('usuarioSesion')){
+      if(await this.$storage.get('usuarioSesion')){
+         console.log("Usuario encontrado, vamos a home")
          this.$router.push('/home')
+         this.correo=''
+         this.password=''
       }else{
          console.log(`No se encontró ningún usuario con el correo especificado`)
+         await alertaUsuarioIncorrecto.present()
       }
       //await this.$storage.set('tutores', [{nombre:'Maria', correo:'hola@hotmail.com', password:'asdlkj'}]);
       //const llaves = await this.$storage.get('tutores')

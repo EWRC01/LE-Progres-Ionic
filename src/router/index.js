@@ -11,6 +11,7 @@ import Familia from '../views/categorias/Familia.vue'
 import Vocales from '../views/categorias/Vocales.vue'
 import Rutina from '../views/categorias/Rutina.vue'
 import SubirContenido from '../views/SubirContenido.vue'
+import GuiasTutores from '../views/GuiasTutores.vue'
 import Test from '../views/Test.vue'
 
 const routes = [
@@ -72,6 +73,11 @@ const routes = [
      path: '/subircontenido',
      name: 'SubirContenido',
      component: SubirContenido
+  },
+  {
+     path: '/guiastutores',
+     name: 'GuiasTutores',
+     component: GuiasTutores
   },
   {
     path: '/test',

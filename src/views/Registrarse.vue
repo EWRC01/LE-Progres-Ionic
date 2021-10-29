@@ -69,7 +69,7 @@
 <script>
 import { IonCol, IonGrid, IonRow, IonPage, IonContent,
 IonToolbar, IonTitle, IonHeader, IonText, IonItem,
-IonInput, IonButton, IonLabel} from '@ionic/vue';
+IonInput, IonButton, IonLabel, alertController} from '@ionic/vue';
 import { defineComponent } from 'vue';
 
 export default defineComponent({
@@ -108,6 +108,14 @@ export default defineComponent({
   },
   methods: {
     async agregarUsuario(){
+      const alert = await alertController
+        .create({
+          header: 'Alert',
+          subHeader: 'Usuario Existente',
+          message: 'Ya existe un usuario registrado con ese correo',
+          buttons: ['OK'],
+        });
+      //if(this.nombre)
       let existeUsuario = false
       await this.$storage.create()
       let listaTutores = await this.$storage.get('tutores')
@@ -115,6 +123,7 @@ export default defineComponent({
          for(const tutor of listaTutores){
             if(this.correo == tutor.correo){
               existeUsuario = true
+              await alert.present()
               console.log(`Ya existe un usuario registrado con ese correo`)
               break
             }

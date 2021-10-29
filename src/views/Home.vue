@@ -5,7 +5,7 @@
         <ion-buttons :collapse="true" slot="start">
             <ion-menu-button></ion-menu-button>
         </ion-buttons>
-        <ion-title>Opciones 2</ion-title>
+        <ion-title>Home</ion-title>
       </ion-toolbar>
     </ion-header>
     
