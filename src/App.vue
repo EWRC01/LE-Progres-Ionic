@@ -16,7 +16,7 @@
                <ion-icon name="mail-outline" slot="start"></ion-icon>
                <ion-label>Categorías</ion-label>
              </ion-item>
-             <ion-item>
+             <ion-item href="/subircontenido">
                <ion-icon name="paper-plane" slot="start"></ion-icon>
                <ion-label>Subir Contenido</ion-label>
              </ion-item>
