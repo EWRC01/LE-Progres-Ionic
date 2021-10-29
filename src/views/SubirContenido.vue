@@ -82,7 +82,11 @@
 </template>
 
 <script lang="js">
-import { IonContent, IonPage, IonCard, IonCardHeader, IonItem, IonTextarea, IonCardContent, IonLabel, IonButton, IonCardTitle, IonIcon, IonInput, IonList, IonCardSubtitle, IonImg} from '@ionic/vue';
+import { IonContent, IonPage, IonCard, IonCardHeader, 
+IonItem, IonTextarea, IonCardContent, IonLabel, 
+IonButton, IonCardTitle, IonIcon, IonInput, 
+IonList, IonCardSubtitle, IonImg, IonToolbar,
+IonHeader, IonTitle, IonButtons, IonMenuButton} from '@ionic/vue';
 import { defineComponent } from 'vue';
 import {arrowUpCircle, closeCircle} from "ionicons/icons";
 export default defineComponent({
@@ -102,7 +106,12 @@ export default defineComponent({
     IonInput,
     IonList,
     IonCardSubtitle,
-    IonImg
+    IonImg,
+    IonToolbar,
+    IonTitle,
+    IonButtons,
+    IonMenuButton,
+    IonHeader
   },
   setup() {
     return {
