@@ -110,14 +110,19 @@ export default defineComponent({
     async agregarUsuario(){
       let existeUsuario = false
       await this.$storage.create()
-      const listaTutores = await this.$storage.get('tutores')
-      for(const tutor of listaTutores){
-         if(this.correo == tutor.correo){
-           existeUsuario = true
-           console.log(`Ya existe un usuario registrado con ese correo`)
-           break
+      let listaTutores = await this.$storage.get('tutores')
+      if(listaTutores){
+         for(const tutor of listaTutores){
+            if(this.correo == tutor.correo){
+              existeUsuario = true
+              console.log(`Ya existe un usuario registrado con ese correo`)
+              break
+            }
          }
+      }else{
+         listaTutores = []
       }
+
       if(!existeUsuario){
          //Creamos el usuario
          listaTutores.push({correo:this.correo, nombre:this.nombre, password: this.password})
