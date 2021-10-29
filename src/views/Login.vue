@@ -116,7 +116,8 @@ export default defineComponent({
            break
          }
       }
-
+      
+      //No se verifica si no existe el usuario
       if(this.$storage.get('usuarioSesion')){
          this.$router.push('/home')
       }else{
