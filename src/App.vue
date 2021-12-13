@@ -20,6 +20,10 @@
                <ion-icon name="paper-plane" slot="start"></ion-icon>
                <ion-label>Subir Contenido</ion-label>
              </ion-item>
+             <ion-item href="/helpMenu">
+               <ion-icon name="mail-outline" slot="start"></ion-icon>
+               <ion-label>Ayuda</ion-label>
+             </ion-item>
              <ion-item button @click="cerrarSesion()">
                <ion-icon name="heart" slot="start"></ion-icon>
                <ion-label>Cerrar Sesión</ion-label>

@@ -13,6 +13,9 @@ import Rutina from '../views/categorias/Rutina.vue'
 import SubirContenido from '../views/SubirContenido.vue'
 import GuiasTutores from '../views/GuiasTutores.vue'
 import Test from '../views/Test.vue'
+import HelpMenu from '../views/HelpMenu.vue'
+import Faq from '../views/Faq.vue'
+import Manual from '../views/Manual.vue'
 
 const routes = [
   {
@@ -83,6 +86,21 @@ const routes = [
     path: '/test',
     name: 'Test',
     component: Test
+  },
+  {
+    path: '/helpmenu',
+    name: 'HelpMenu',
+    component: HelpMenu
+  },
+  {
+    path: '/faq',
+    name: 'Faq',
+    component: Faq
+  },
+  {
+    path: '/manual',
+    name: 'Manual',
+    component: Manual
   }
 
 ]
